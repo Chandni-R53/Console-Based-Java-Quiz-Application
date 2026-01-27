@@ -25,6 +25,7 @@ public class Question {
         Question q8=new Question("Which package contains classes for file handling in Java?","java.util","java.io","java.lang","java.net","B");
         Question q9=new Question("Why is Java platform independent?","Because Java uses pointers","Because Java code is interpreted","Because Java bytecode runs on JVM","Because Java has no compiler","C");
         Question q10=new Question("What is the main purpose of garbage collection in Java?","To delete variables manually","To free unused memory automatically","To improve code speed","None of the above","B");
-        
+        Question q11=new Question("Which of the following statements about static is true?","Static variables belong to objects","Static methods can access non-static members directly","Static members belong to the class","Static methods support method overriding","C");
+
     }
 }
