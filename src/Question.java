@@ -26,6 +26,10 @@ public class Question {
         Question q9=new Question("Why is Java platform independent?","Because Java uses pointers","Because Java code is interpreted","Because Java bytecode runs on JVM","Because Java has no compiler","C");
         Question q10=new Question("What is the main purpose of garbage collection in Java?","To delete variables manually","To free unused memory automatically","To improve code speed","None of the above","B");
         Question q11=new Question("Which of the following statements about static is true?","Static variables belong to objects","Static methods can access non-static members directly","Static members belong to the class","Static methods support method overriding","C");
+        Question q12=new Question("What does the instanceof operator do?","Creates an object","Checks object type at runtime","Converts one class to another","Compares two objects","B");
+        Question q13=new Question("Why is String immutable in Java?","To save memory","For security and performance","To allow inheritance","To support multithreading only","B");
+        Question q14=new Question("What is the difference between == and equals() in Java?","Both compare memory","== compares references, equals() compares content","No difference","Both compare content","B");
+        Question q15=new Question("What happens if a return statement is executed inside a try block?","finally block is skipped","Program crashes","finally block still executes","Compilation error","C");
 
     }
 }
