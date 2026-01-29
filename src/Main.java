@@ -27,8 +27,19 @@ public class Main {
         Que[14]=new Question("What happens if a return statement is executed inside a try block?","finally block is skipped","Program crashes","finally block still executes","Compilation error","C");
 
         Quiz quiz=new Quiz(Que);
-        quiz.printQuest();
-
+        int totalScore= quiz.printQuest();
+        if(totalScore==15){
+        System.out.println("Wonderfull! You've got the best score.");
+        }
+        else if(totalScore>10){
+        System.out.println("Good job! You've got "+totalScore+" out of 15.");
+        }
+        else if(totalScore>=7){
+        System.out.println("Good! You've got "+totalScore+" out of 15.");
+        }
+        else{
+        System.out.println("You've got "+totalScore+" out of 15.\nBetter luck next time!");
+        }
           
     }
 }
