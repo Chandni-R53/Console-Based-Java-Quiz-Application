@@ -11,17 +11,19 @@ public class Quiz {
         int j=1;
         for(int i=0;i<Q.length;i++){
            System.out.println("Q."+j+" "+Q[i].que+"\nA. "+Q[i].optA+"\nB. "+Q[i].optB+"\nC. "+Q[i].optC+"\nD. "+Q[i].optD);
-           try{System.out.print("\nChoose the correct option and enter here: ");
+           System.out.print("\nChoose the correct option and enter here: ");
            String result=sc.nextLine();
-           }catch(IOException e){
-              System.out.println();
+           while(!result.equalsIgnoreCase("A")&&!result.equalsIgnoreCase("B")&&!result.equalsIgnoreCase("C")&&!result.equalsIgnoreCase("D")){
+            System.out.print("Your input is invalid, please enter the valid input from the given options: ");
+            result=sc.nextLine();
            }
+           
            if(result.equalsIgnoreCase(Q[i].ans)){
             score++;
-            System.out.println("Correct answer ✅");
+            System.out.println("Your answer is correct.");
            }
            else{
-            System.out.println("Incorrect answer ❌");
+            System.out.println("Your answer is incorrect.");
            }
            System.out.println();
            j++;

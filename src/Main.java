@@ -28,17 +28,31 @@ public class Main {
 
         Quiz quiz=new Quiz(Que);
         int totalScore= quiz.printQuest();
-        if(totalScore==15){
+        if(totalScore==Que.length){
         System.out.println("Wonderfull! You've got the best score.");
         }
         else if(totalScore>10){
-        System.out.println("Good job! You've got "+totalScore+" out of 15.");
+        System.out.println("Good job! You've got "+totalScore+" out of "+Que.length+".");
         }
         else if(totalScore>=7){
-        System.out.println("Good! You've got "+totalScore+" out of 15.");
+        System.out.println("Good! You've got "+totalScore+" out of "+Que.length+".");
         }
         else{
-        System.out.println("You've got "+totalScore+" out of 15.\nBetter luck next time!");
+        System.out.println("You've got "+totalScore+" out of "+Que.length+".\nBetter luck next time!");
+        }
+
+        System.out.print("\nTry again? Yes/No: ");
+        String s=sc.nextLine();
+        while(!s.equalsIgnoreCase("Yes")&&!s.equalsIgnoreCase("No")){
+            System.out.print("Your input is invalid, please enter the valid input (Yes/No): ");
+            s=sc.nextLine();
+        }
+        if(s.equalsIgnoreCase("Yes")){
+            
+        }
+        else{
+            System.out.println("Thankyou for attempting this quiz.\nThe program is now terminated.");
+            System.exit(0);
         }
           
     }
