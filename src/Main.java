@@ -1,6 +1,8 @@
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -11,7 +13,8 @@ public class Main {
         System.out.println("Hello, "+name+" before starting the quiz please read the given instructions carefully.");
         System.out.println("\n---QUIZ INSTRUCTIONS--- \n");
         System.out.println("1. The quiz contains multiple-choice questions.\n2. Each question has four options (A, B, C, D).\n3. Select only one option for each question.\n4. Enter your answer as A, B, C, or D.\n5. Each correct answer carries 1 mark.\n6. No negative marking for wrong answers.\n7. The quiz will proceed to the next question automatically.\n8. Final score will be displayed at the end of the quiz.\n  ");
-
+        System.out.println("\nYou can start attempting your quiz.\nAll The Best!\n ");
+        
         Question[] Que=new Question[15];
         Que[0]=new Question("What is JVM?","Java Variable Machine","Java Virtual Machine","Java Visual Machine","Java Verified Machine", "B");
         Que[1]=new Question("Which keyword is used to inherit a class in Java?","inherit","extends","implements","super","B");
@@ -34,11 +37,18 @@ public class Main {
         Quiz quiz=new Quiz(Que);
         int totalScore= quiz.printQuest();
 
+        LocalDateTime now = LocalDateTime.now();
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
+        String dateTime = now.format(formatter);
+
+
         try {
             FileWriter fw = new FileWriter("data/Results.txt", true);
             BufferedWriter bw = new BufferedWriter(fw);
 
              bw.write("Name: " + name + " | Score: " + totalScore + "/" + Que.length);
+             bw.newLine();
+             bw.write("Date & Time: " + dateTime);
              bw.newLine();
              bw.write("-----------------------------------");
              bw.newLine();

@@ -24,6 +24,7 @@ public class Quiz {
            }
            else{
             System.out.println("Your answer is incorrect.");
+            System.out.println("Correct Answer: "+Q[i].ans);
            }
            System.out.println();
            j++;
