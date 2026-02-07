@@ -1,3 +1,6 @@
+import java.io.BufferedWriter;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
@@ -26,9 +29,24 @@ public class Main {
         Que[13]=new Question("What is the difference between == and equals() in Java?","Both compare memory","== compares references, equals() compares content","No difference","Both compare content","B");
         Que[14]=new Question("What happens if a return statement is executed inside a try block?","finally block is skipped","Program crashes","finally block still executes","Compilation error","C");
         
+      
         do{
         Quiz quiz=new Quiz(Que);
         int totalScore= quiz.printQuest();
+
+        try {
+            FileWriter fw = new FileWriter("data/Results.txt", true);
+            BufferedWriter bw = new BufferedWriter(fw);
+
+             bw.write("Name: " + name + " | Score: " + totalScore + "/" + Que.length);
+             bw.newLine();
+             bw.write("-----------------------------------");
+             bw.newLine();
+             bw.close();
+            }catch (IOException e) {
+                   System.out.println("Error while saving the quiz result.");
+            }
+
         if(totalScore==Que.length){
         System.out.println("Wonderfull! You've got the best score.");
         }
@@ -53,11 +71,12 @@ public class Main {
         }
         else{
             System.out.println("Thankyou for attempting this quiz.\nThe program is now terminated.");
-            System.exit(0);
+            break;
         }
         System.out.println();
     }while(true);
     
+
     
           
     }
