@@ -25,7 +25,8 @@ public class Main {
         Que[12]=new Question("Why is String immutable in Java?","To save memory","For security and performance","To allow inheritance","To support multithreading only","B");
         Que[13]=new Question("What is the difference between == and equals() in Java?","Both compare memory","== compares references, equals() compares content","No difference","Both compare content","B");
         Que[14]=new Question("What happens if a return statement is executed inside a try block?","finally block is skipped","Program crashes","finally block still executes","Compilation error","C");
-
+        
+        do{
         Quiz quiz=new Quiz(Que);
         int totalScore= quiz.printQuest();
         if(totalScore==Que.length){
@@ -54,6 +55,10 @@ public class Main {
             System.out.println("Thankyou for attempting this quiz.\nThe program is now terminated.");
             System.exit(0);
         }
+        System.out.println();
+    }while(true);
+    
+    
           
     }
 }
